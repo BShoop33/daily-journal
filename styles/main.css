@@ -1,0 +1,83 @@
+.header {
+    font-size: 28pt;
+    font-weight: 1000;
+    margin-top: -0.5em;
+}
+
+body {
+    background-image: url("/Images/background.jpg");
+    background-color: #cccccc;
+    font-family: 'PT Sans', sans-serif;
+}
+
+input[type="text"]{
+    font-size:16px;
+}
+
+textarea {
+    font-size: 18px;
+}
+
+.dateFieldset {
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+    font-size: 24px;
+    font-weight: 400;
+    background-color: #98855D;
+    color: white;
+    margin-top: -0.5em;
+}
+
+.conceptsFieldset {
+    display: flex;
+    flex-direction: column;
+    width: 60em;
+    font-size: 24px;
+    font-weight: 400;
+    background-color: #98855D;
+    color: white;
+    margin-top: 1em;
+}
+
+.entriesFieldset {
+    display: flex;
+    flex-direction: column;
+    width: 60em;
+    height: 10em;
+    font-size: 24px;
+    font-weight: 400;
+    background-color: #98855D;
+    color: white;
+    margin-top: 1em;
+}
+
+.moodFieldset {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    width: 10em;
+    margin-top: 3px;
+    font-size: 26px;
+    font-weight: 400;
+    background-color: #98855D;
+    color: white;
+    margin-top: 1em;
+}
+
+select {
+    font-size: 20px;
+    width: 120px;
+    height: 1.5em;
+}
+
+.record {
+    font-size: 18px;
+}
+
+.record {
+    margin-top: 1.5em;
+    height: 2em;
+    width: 17em;
+    background-color:greenyellow;
+}

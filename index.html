@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braxton's Daily Journal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+        <header class="header">
+            <H2>Daily Journal</H2>
+        </header>
+        <main>
+            <form action="">
+                <fieldset class="dateFieldset">
+                    <label for="journalDate">Date of entry</label>
+                    <input type="date" name="journalDate" id="journalDate">
+                </fieldset>
+            </form>
+            
+            <form action="">
+                <fieldset class="conceptsFieldset">
+                    <label for="conceptsCovered">Concepts covered</label>
+                    <input type="text" size="200" name="concepts" id="conceptsCovered">
+                </fieldset> 
+            </form>
+            
+            <form action="">
+                <fieldset class="entriesFieldset">    
+                    <label for="journalEntry">Journal Entry</label>
+                    <textarea rows="9" cols="162" name="entries" id="journalEntry"></textarea>
+                </fieldset>
+            </form>   
+            
+            <form action="">
+                <fieldset class="moodFieldset">
+                    <label for="todaysMood">Mood for the day</label>
+                    <select id="mood">
+                        <option selected="selected" class="service-small">-</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Ok">Ok</option>
+                        <option value="Sad">Sad</option>
+                    </select>
+                </fieldset>
+            </form>
+            
+            <button class="record">Record Journal Entry</button>
+        
+            <div class="entryLog"></div>
+            <script type="module" src="./scripts/main.js"></script>
+        </main>
+</body>
+</html>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              <!-- <button class="archive">Archived Journal Entries</button> -->
+                 <!-- refer to this https://www.w3schools.com/howto/howto_js_dropdown.asp when it's time to link the database -->
+            <!-- <img class="logo" src="Images/logo1.png">
+            <p></p>
+        </header>
+        <section class="peripheral">
+            <button class="slept">Hours Slept</button> 
+                 refer to this https://www.w3schools.com/howto/howto_js_dropdown.asp when it's time to link the database  -->
+            <!-- <button class="mood">Mood Today</button> 
+                 refer to this https://www.w3schools.com/howto/howto_js_dropdown.asp when it's time to link the database  -->
+            <!-- <input class="date" type="date">
+        </section>
+        <section class="primary">
+            <label class="conceptsLabel">Concepts Involved</label>
+            <textarea class="concepts" type=textarea wrap="hard">Enter the concepts you've covered here</textarea>
+            <label class="journalLabel">Journal Entry</label>
+            <textarea class="journal" type=textarea wrap="hard">Enter your journal entry here</textarea>
+        </section>
+        <section class="submit">
+            <button class="save">Save Entry</button> 
+            <button class="attach">Attach File</button>
+            refer to this https://www.w3schools.com/howto/howto_js_dropdown.asp when it's time to link the database  -->
+        <!-- </section>
+        <footer id="footer">
+            <p>&copy; Braxton Shoop 2020 | GitHub:  <a target="_blank" href="https://github.com/BShoop33">https://github.com/BShoop33</a></p>
+        </footer> --> 
