@@ -29,14 +29,14 @@ const journal = [
         date: "08/12/2020",
         concept: "HTML & CSS",
         entry: "Today we learned a bit about how to use GitHub and we started the Hello World Travel Agency team project. I learned to use the Ubuntu command line rather than the Ubuntu 18.04 LTS command line. I also had a technical problem with getting images to load in my locally hosted HTML page.",
-        mood: "Happy"
+        mood: "Ok"
     },
     {
         id: 4,
         date: "08/13/2020",
         concept: "HTML & CSS",
         entry: "Today we continued team work on the Hello World Travel Agency project. We figured out how to bypass the HTML images technincal issue by dragging the image directly into VSCode rather than putting them in directories.",
-        mood: "Happy"
+        mood: ""
     }
 ];
 
@@ -48,7 +48,7 @@ export const useJournalEntries = () => {
     const sortedByDate = journal.sort(
         (currentEntry, nextEntry) =>
             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-    );
+    )
     return sortedByDate;
 };
 
