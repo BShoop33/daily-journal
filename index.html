@@ -11,46 +11,54 @@
 
 <body>
     <header class="header">
-        <H2>Daily Journal</H2>
-        <img src="Images/logo1.png" class="logo">
+        <H2 id="pageHeader">Braxton's Daily Journal</H2>
+
     </header>
-    <main>
-        <form action="">
-            <fieldset class="dateFieldset">
-                <label for="journalDate">Date of entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-        </form>
+    <main class="container">
+        <div id="pageBody">
+            <div id="formBody">
+                <form action="">
+                    <fieldset class="dateFieldset">
+                        <label id="dateHeader" for="journalDate">Entry Date</label>
+                        <input type="date" name="journalDate" id="journalDate">
+                    </fieldset>
+                </form>
 
-        <form action="">
-            <fieldset class="conceptsFieldset">
-                <label for="conceptsCovered">Concepts covered</label>
-                <input type="text" size="200" name="concepts" id="conceptsCovered">
-            </fieldset>
-        </form>
+                <form action="">
+                    <fieldset class="conceptsFieldset">
+                        <label id="conceptsHeader" for="conceptsCovered">Concepts Covered</label>
+                        <input type="text" name="concepts" id="conceptsCovered">
+                    </fieldset>
+                </form>
 
-        <form action="">
-            <fieldset class="entriesFieldset">
-                <label for="journalEntry">Journal Entry</label>
-                <textarea rows="9" cols="162" name="entries" id="journalEntry"></textarea>
-            </fieldset>
-        </form>
+                <form action="">
+                    <fieldset class="entriesFieldset">
+                        <label id="entryHeader" for="journalEntry">Journal Entry</label>
+                        <textarea rows="11" cols="64" name="entries" id="journalEntry"></textarea>
+                    </fieldset>
+                </form>
 
-        <form action="">
-            <fieldset class="moodFieldset">
-                <label for="todaysMood">Mood for the day</label>
-                <select id="mood" style="width: 13em">
-                    <option selected="selected" class="service-small">How do you feel today?</option>
-                    <option value="Happy">Happy</option>
-                    <option value="Ok">Ok</option>
-                    <option value="Sad">Sad</option>
-                </select>
-            </fieldset>
-        </form>
+                <form action="">
+                    <fieldset class="moodFieldset">
+                        <label id="moodHeader" for="todaysMood">Today's Mood</label>
+                        <select id="mood" style="width: 13em">
+                            <option selected="selected" class="service-small">How do you feel today?</option>
+                            <option value="Happy">Happy</option>
+                            <option value="Ok">Ok</option>
+                            <option value="Sad">Sad</option>
+                        </select>
+                    </fieldset>
+                </form>
 
-        <button class="record">Record Journal Entry</button>
 
-        <div class="entryLog"></div>
+                <button id="record">Record Journal Entry</button>
+
+            </div>
+            <div id="entriesBody">
+                <h2 id="priorEntriesHeader">Entries</h2>
+                <div class="entriesContainer"></div>
+            </div>
+        </div>
         <script type="module" src="scripts/main.js"></script>
     </main>
 </body>

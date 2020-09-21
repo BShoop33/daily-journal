@@ -1,11 +1,11 @@
 console.log("main.js");
 
-// import { journalEntryForm } from './JournalForm.js'
-import { getEntries, useJournalEntries } from './JournalDataProvider.js'
+import { journalEntryForm } from './JournalForm.js'
+import { getEntries, useEntries } from './JournalDataProvider.js'
 // import { EntryListComponent } from './JournalEntryList.js'
 
-// journalEntryForm();
-useJournalEntries();
+journalEntryForm();
+useEntries();
 getEntries();
 
 // EntryListComponent();
