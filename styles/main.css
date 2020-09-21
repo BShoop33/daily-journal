@@ -7,7 +7,7 @@ body {
 #conceptsCovered {
     margin-left: -.4em;
     margin-right: -.4em;
-    width: 30.8em;
+    width: 48.75em;
 }
 
 .conceptsFieldset {
@@ -54,6 +54,8 @@ body {
     background-color: white;
     display: flex;
     flex-flow: column;
+    margin-left: 10em;
+    width: 57.5em;
 }
 
 .entriesContainer {
@@ -102,10 +104,6 @@ body {
     margin-bottom: 1em;
     margin-left: 15em;
     width: 20em;
-}
-
-#entry-- {
-    text-decoration: underline;
 }
 
 li {
@@ -160,6 +158,7 @@ li {
 #priorEntriesHeader {
     font-size: 28pt;
     margin-left: 1em;
+    padding-left: 8em;
 }
 
 #priorEntry {
