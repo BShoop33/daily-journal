@@ -1,67 +1,32 @@
 {
   "entries": [
     {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "asfdasd",
-      "moodEntry": "Happy",
-      "id": 5
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "asfdasd",
-      "moodEntry": "Happy",
-      "id": 6
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "asfdasd",
-      "moodEntry": "Happy",
-      "id": 7
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "asfdasd",
-      "moodEntry": "Happy",
-      "id": 8
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "asfdasd",
-      "moodEntry": "Happy",
-      "id": 9
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "asfdasd",
-      "moodEntry": "Happy",
-      "id": 10
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "asdfas",
-      "journalEntry": "ffff",
-      "moodEntry": "Happy",
-      "id": 11
-    },
-    {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "Test 9/21",
+      "dateEntry": "2020-09-01",
+      "conceptEntry": "test",
       "journalEntry": "test",
       "moodEntry": "Happy",
-      "id": 12
+      "id": 1
     },
     {
-      "dateEntry": "2020-09-02",
-      "conceptEntry": "Test 9/21",
-      "journalEntry": "test",
-      "moodEntry": "Happy",
-      "id": 13
+      "dateEntry": "2020-09-10",
+      "conceptEntry": "asdfa",
+      "journalEntry": "asdfasd",
+      "moodEntry": "Ok",
+      "id": 2
+    },
+    {
+      "dateEntry": "",
+      "conceptEntry": "",
+      "journalEntry": "",
+      "moodEntry": "How do you feel today?",
+      "id": 3
+    },
+    {
+      "dateEntry": "2020-09-09",
+      "conceptEntry": "dd",
+      "journalEntry": "dd",
+      "moodEntry": "Ok",
+      "id": 4
     }
   ]
 }

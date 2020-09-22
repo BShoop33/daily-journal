@@ -2,7 +2,10 @@ console.log("JournalDataProvider.js");
 
 let entries = [];
 
-export const getEntries = () => {
+const eventHub = document.querySelector(".container")
+//==========================================================================
+//A1////////////////////////////////////////////////////////////////////////
+export const getEntry = () => {
     return fetch("http://localhost:8088/entries") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
         .then(parsedResponse => {
@@ -10,25 +13,13 @@ export const getEntries = () => {
 
         })
 };
-
-
-export const useEntries = () => {
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//A2////////////////////////////////////////////////////////////////////////
+export const useEntry = () => {
     return entries.slice()
 }
-// const journal = [];
-
-// export const useJournalEntries = () => {
-//     const sortedByDate = journal.sort(
-//         (currentEntry, nextEntry) =>
-//             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-//     )
-//     return sortedByDate;
-// };
-
-
-
-
-
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//A3////////////////////////////////////////////////////////////////////////
 export const saveEntry = entry => {
     return fetch('http://localhost:8088/entries', {
         method: "POST",
@@ -38,3 +29,26 @@ export const saveEntry = entry => {
         body: JSON.stringify(entry)
     })
 }
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//A4////////////////////////////////////////////////////////////////////////
+export const deleteEntry = entryId => {
+    return fetch(`http://localhost:8088/entries/${entryId}`, {
+        method: "DELETE"
+    })
+        .then(getEntries)
+        .then(dispatchStateChangeEvent)
+}
+const dispatchStateChangeEvent = () => {
+    const entryStateChangedEvent = new CustomEvent("noteStateChanged")
+    eventHub.dispatchEvent(entryStateChangedEvent)
+}
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// const journal = [];
+
+// export const useJournalEntries = () => {
+//     const sortedByDate = journal.sort(
+//         (currentEntry, nextEntry) =>
+//             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
+//     )
+//     return sortedByDate;
+// };
