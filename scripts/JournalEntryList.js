@@ -1,37 +1,13 @@
 console.log("JournalEntryList.js")
 
-import { JournalEntryComponent } from './JournalEntry.js'
 import { getEntry, useEntry, deleteEntry } from './JournalDataProvider.js'
-
-const contentTarget = document.querySelector(".entriesContainer")
+import { journalEntryForm } from './JournalForm.js'
 const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".entriesContainer")
 
 let entryObj = [];
-//==========================================================================
-//D1////////////////////////////////////////////////////////////////////////
-const render = (newEntry) => {
-    contentTarget.innerHTML = newEntry.map((entryObj) => {
-        return JournalEntryComponent()
-    }).join("")
-    return JournalEntryComponent(entryObj)
-}
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//D2////////////////////////////////////////////////////////////////////////
-export const entryList = () => {
-    getEntry()
-        .then(() => {
-            const entryObj = useEntry()
-            render(entryObj)
-        })
-}
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//D3////////////////////////////////////////////////////////////////////////
-eventHub.addEventListener("noteStateChanged", () => {
-    const newEntry = useEntry()
-    render(newEntry)
-})
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//D4////////////////////////////////////////////////////////////////////////
+
+//C1
 eventHub.addEventListener("click", event => {
     event.preventDefault()
     if (event.target.id.startsWith("deleteEntry--")) {
@@ -39,17 +15,25 @@ eventHub.addEventListener("click", event => {
         deleteEntry(id)
     }
 })
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// console.log("JournalEntryList.js");
 
-// import { useJournalEntries } from './JournalDataProvider.js'
-// import { JournalEntryComponent } from './JournalEntry.js'
+//C2
+const render = (notes) => {
+    contentTarget.innerHTML = notes.map(noteObj => {
+        return journalEntryForm(noteObj.id)
+    }).join("")
+}
 
-// // DOM reference to where all entries will be rendered
-// const entryLog = document.querySelector(".entryLog");
+//C3
+export const entryList = () => {
+    getEntry()
+        .then(() => {
+            const entryObj = useEntry()
+            render(entryObj)
+        })
+}
 
-// // Use the journal entry data from the data provider component
-// export const EntryListComponent = () => {
-//     const entries = useJournalEntries()
-//     entryLog.innerHTML += entries.map(entry => JournalEntryComponent(entry)).join("")
-// };
+//C4 I don't think this is needed because it was used in glassdale to join criminals data with note data when delete fetch fires
+// eventHub.addEventListener("noteStateChanged", () => {
+//     const newEntry = useEntry()
+//     render(newEntry)
+// })

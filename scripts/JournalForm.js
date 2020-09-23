@@ -5,9 +5,8 @@ import { saveEntry } from "./JournalDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".entriesContainer")
-//==========================================================================
 
-//C1/////////////////////////////////////////////////////////////////////////
+//B1 creates the object structure for POST operation
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "record") {
         const journalDate = document.querySelector("#journalDate");
@@ -23,8 +22,8 @@ eventHub.addEventListener("click", clickEvent => {
         saveEntry(newJournalEntry)
     }
 })
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//C2////////////////////////////////////////////////////////////////////////
+
+//B2
 const render = (journalEntryArray) => {
     contentTarget.innerHTML = `
     ${journalEntryArray.map(entryObj => {
@@ -35,7 +34,7 @@ const render = (journalEntryArray) => {
             <li id="newConcepts"><p><strong>Concepts Covered</strong>:  ${entryObj.conceptEntry}</p></li>
             <li id="newEntry"><p><strong>Journal Entry</strong>:  ${entryObj.journalEntry}</p></li>
             <li id="newMood"><p><strong>Mood</strong>:  ${entryObj.moodEntry}</p></li>
-            <button id="deleteEntry--${entryObj.id}">Delete</button>
+            <button onClick="location.reload(true)" id="deleteEntry--${entryObj.id}">Delete</button>
             </ul>
         `
     }).join("")}
@@ -47,4 +46,3 @@ export const journalEntryForm = () => {
             render(useEntry())
         })
 }
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
