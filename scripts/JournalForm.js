@@ -1,14 +1,14 @@
 console.log("JournalForm.js");
 
-import { getEntries, useEntries } from './JournalDataProvider.js'
+import { getEntry, useEntry } from './JournalDataProvider.js'
 import { saveEntry } from "./JournalDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".entriesContainer")
 
+//B1 creates the object structure for POST operation
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "record") {
-        console.log("true")
         const journalDate = document.querySelector("#journalDate");
         const conceptsCovered = document.querySelector("#conceptsCovered");
         const journalEntry = document.querySelector("#journalEntry");
@@ -23,25 +23,26 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
+//B2
 const render = (journalEntryArray) => {
     contentTarget.innerHTML = `
     ${journalEntryArray.map(entryObj => {
         return `
-            <section id="entry--${entryObj.id}" class="journalEntry"></section>
-            <ul id="priorJournalEntries">
-            <li id="priorDate"><h2>${entryObj.dateEntry}</h2></li>
-            <li id="priorMood"><p><strong>Mood</strong>:  ${entryObj.moodEntry}</p></li>
-            <li id="priorConcepts"><p><strong>Concepts Covered</strong>:  ${entryObj.conceptEntry}</p></li>
-            <li id="priorEntry"><p><strong>Journal Entry</strong>:  ${entryObj.journalEntry}</p></li>
+            <section class="journalEntry"></section>
+            <ul id="newJournalEntry">
+            <li id="newDate"><h2>${entryObj.dateEntry}</h2></li>
+            <li id="newConcepts"><p><strong>Concepts Covered</strong>:  ${entryObj.conceptEntry}</p></li>
+            <li id="newEntry"><p><strong>Journal Entry</strong>:  ${entryObj.journalEntry}</p></li>
+            <li id="newMood"><p><strong>Mood</strong>:  ${entryObj.moodEntry}</p></li>
+            <button onClick="location.reload(true)" id="deleteEntry--${entryObj.id}">Delete</button>
             </ul>
         `
     }).join("")}
     `
 }
-
 export const journalEntryForm = () => {
-    getEntries()
+    getEntry()
         .then(() => {
-            render(useEntries())
+            render(useEntry())
         })
 }

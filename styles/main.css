@@ -51,7 +51,7 @@ body {
 }
 
 #entriesBody {
-    background-color: white;
+    background-color: whitesmoke;
     display: flex;
     flex-flow: column;
     margin-left: 10em;
@@ -59,8 +59,11 @@ body {
 }
 
 .entriesContainer {
-    width: 90em
+    width: 57.5em;
+  
 }
+
+
 
 .entriesFieldset {
     background-color: #AC6110;
