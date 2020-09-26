@@ -1,27 +1,30 @@
-console.log("JournalDataProvider.js");
+import { entryList } from './JournalEntryList.js'
+
+const eventHub = document.querySelector(".container");
+
+const dispatchStateChangeEvent = () => {
+    const entryStateChangedEvent = new CustomEvent("entryStateChanged")
+    eventHub.dispatchEvent(entryStateChangedEvent)
+};
+
+eventHub.addEventListener("entryStateChanged", event => {
+    entryList()
+});
 
 let entries = [];
 
-const eventHub = document.querySelector(".container")
-
-
-
-//A1
 export const getEntry = () => {
-    return fetch("http://localhost:8088/entries") // Fetch from the API
-        .then(response => response.json())  // Parse as JSON
+    return fetch("http://localhost:8088/entries")
+        .then(response => response.json())
         .then(parsedResponse => {
             entries = parsedResponse
-
         })
 };
 
-//A2
 export const useEntry = () => {
     return entries.slice()
 }
 
-//A3
 export const saveEntry = entry => {
     return fetch('http://localhost:8088/entries', {
         method: "POST",
@@ -30,17 +33,14 @@ export const saveEntry = entry => {
         },
         body: JSON.stringify(entry)
     })
-}
+        .then(getEntry)
+        .then(dispatchStateChangeEvent)
+};
 
-//A4
 export const deleteEntry = entryId => {
     return fetch(`http://localhost:8088/entries/${entryId}`, {
         method: "DELETE"
     })
         .then(getEntries)
         .then(dispatchStateChangeEvent)
-}
-// const dispatchStateChangeEvent = () => {
-//     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
-//     eventHub.dispatchEvent(noteStateChangedEvent)
-// }
+};
