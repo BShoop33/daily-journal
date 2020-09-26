@@ -30,7 +30,6 @@ body {
     margin-left: -.3em;
 }
 
-
 .dateFieldset {
     background-color:#AC6110;
     border: .2em;
@@ -60,10 +59,7 @@ body {
 
 .entriesContainer {
     width: 57.5em;
-  
 }
-
-
 
 .entriesFieldset {
     background-color: #AC6110;

@@ -2,10 +2,9 @@ import { getEntry, useEntry, deleteEntry } from './JournalDataProvider.js'
 
 const eventHub = document.querySelector(".container")
 
-const render = (journalEntryArray) => {
+const render = () => {
     const contentTarget = document.querySelector(".entriesContainer")
-    contentTarget.innerHTML = `
-    ${journalEntryArray.map(entryObj => {
+    contentTarget.innerHTML = useEntry().map(entryObj => {
         return `
             <section class="journalEntry"></section>
             <ul id="newJournalEntry">
@@ -16,9 +15,8 @@ const render = (journalEntryArray) => {
             <button onClick="location.reload(true)" id="deleteEntry--${entryObj.id}">Delete</button>
             </ul>
         `
-    }).join("")}
-    `
-};
+    }).join("")
+}
 
 export const entryList = () => {
     getEntry()
