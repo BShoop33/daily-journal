@@ -1,196 +1,168 @@
 body {
-    background-color: #cccccc;
-    background-image: url("/Images/background.jpg");
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Rokkitt', serif;
 }
 
 #conceptsCovered {
-    margin-left: -.4em;
-    margin-right: -.4em;
-    width: 48.75em;
-}
-
-.conceptsFieldset {
-    background-color: #AC6110;
-    border: .15em;
-    border-color: black;
-    border-style: solid;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    font-size: 24pt;
-    font-weight: 400;
-    line-height: 1.75;
-    margin-top: .3em;
-    width: 20em;
+    font-family: 'Rokkitt', serif;
+    font-size: 16pt;
+    width: 40em;
 }
 
 #conceptsHeader {
-    font-size: 22pt;
-    margin-left: -.3em;
-}
-
-.dateFieldset {
-    background-color:#AC6110;
-    border: .2em;
-    border-color: black;
-    border-style: solid;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.75;
-    margin-top: -0.5em;
-    width: 6em;
+    font-size: 20pt;
+    margin-top: .75em;
 }
 
 #dateHeader {
-    font-size: 22pt;
+    color: black;
+    font-size: 20pt;
 }
 
-#entriesBody {
-    background-color: whitesmoke;
-    display: flex;
-    flex-flow: column;
-    margin-left: 10em;
-    width: 57.5em;
-}
-
-.entriesContainer {
-    width: 57.5em;
-}
-
-.entriesFieldset {
-    background-color: #AC6110;
-    border: .2em;
-    border-color: black;
-    border-style: solid;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    height: 14em;
+.deleteEntry {
+    background-color: #faad96;
+    color: black;
     font-size: 16pt;
-    font-weight: 400;
-    line-height: 1.75;
-    margin-top: .375em;
-    width: 20em;
+    height: 1.5em;
+    width: 8em;
+    margin-top: 1em;
+}
+
+.editEntry {
+    background-color: #a9ccff;
+    color: black;
+    font-size: 16pt;
+    height: 1.5em;
+    width: 8em;
 }
 
 #entryHeader {
-    font-size: 22pt;
+    font-size: 20pt;
+    margin-left: .1em;
+    margin-top: .75em;
 }
 
-#formBody {
-    display: flex;
-    flex-flow: column;
-    min-width: 50em;
-}
-
-.header {
-    background-color: #AC6110;
-    border: 5px;
-    border-color: black;
-    border-style: solid;
-    color: white;
+#header {
     display: flex;
     flex-flow: row;
-    font-size: 28pt;
-    font-weight: 1000;
-    height: 2.5em;
-    justify-content: space-around;
-    margin-top: .75em;
-    margin-bottom: 1em;
-    margin-left: 15em;
-    width: 20em;
 }
 
-li {
-    line-height: 25px;
-    list-style: none;
-}
-
-.logo {
-    height: 4.5em;
-    width: 4.5em;
-}
-
-.moodFieldset {
-    background-color:#AC6110;
-    border: .175em;
-    border-color: black;
+#headerFont {
+    border: 4px;
+    border-color: #328885;
     border-style: solid;
-    color: white;
+    color: black;
+    font-size: 25pt;
+    margin-left: -.0em;
+    margin-top: -.0em;
+    padding-bottom: .25em;
+    padding-left: .45em;
+    padding-right: .45em;
+    padding-top: .25em;
+}
+
+#hr {
+    width: 60%;margin-left: auto;margin-right: auto;
+}
+
+#journalDate {
+    height: 2em;
+    width: 12em;
+}
+
+#journalEntry {
+    font-family: 'Rokkitt', serif;
+    font-size: 16pt;
+    overflow: auto;
+    width: 40em;
+    height: auto;
+    border: 2px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+.journalEntry {
+    font-family: 'Rokkitt', serif;
+    font-size: 16pt;
+    overflow: auto;
+    width: 43em;
+    height: auto;
+    border: 2px;
+    border-style: solid;
+    border-color: lightgray;
+    margin-left: -.5em;
+    padding-bottom: .75em;
+    padding-left: .75em;
+}
+
+#journalForm {
     display: flex;
-    flex-direction: column;
-    flex-grow: 3;
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 1.75;
-    margin-top: .3em;
-    width: 7em;
+    flex-flow: column;
+    margin-left: .1em;
+}
+
+#journalPageBody {
+    display: flex;
+    flex-flow: row;
+}
+
+#mood {
+    font-size: 16pt;
+    width: 40em;
 }
 
 #moodHeader {
-    font-size: 22pt;
+    font-size: 20pt;
+    margin-left: .1em;
+    margin-top: .75em;
 }
 
-#pageBody {
-    display: flex;
-    flex-flow: row;
+#newDate {
+    font-size: 18pt;
+    margin-bottom: -.25em;
 }
 
-#pageHeader {
-    font-weight: 400;
-    margin-top: .15em;
+#newEntry {
+    margin-top: -.5em;
 }
 
-#priorConcepts {
+#newMood {
+    margin-top: -.5em;
+    margin-bottom: -.5em;
+}
+
+#priorEntriesContainer {
+    font-family: 'Rokkitt', serif;
     font-size: 16pt;
-    margin-top: -.75em;
+    margin-left: 2em;
 }
 
-#priorDate {
-    margin-top: 4em;
+#priorEntriesForm {
+    border: .5em;
+    border-style: solid;
+    border-color: #328885;
+    margin-left: 1em;
+    width: 60%;
+    height: 50em;
+    overflow: auto;
 }
 
 #priorEntriesHeader {
-    font-size: 28pt;
-    margin-left: 1em;
-    padding-left: 8em;
+    font-size: 22pt;
+    font-family: 'Rokkitt', serif;
+    margin-bottom: .5em;
 }
 
-#priorEntry {
-    font-size: 16pt;
-    margin-top: -.75em;
-}
-
-#priorJournalEntries {
-    margin-top: -2em;
-}
-
-#priorMood {
-    font-size: 16pt;
-    margin-top: -.75em;
+#priorEntriesHeaderContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
 }
 
 #record {
-    background-color:greenyellow;
-    border: .2em;
-    border-color: black;
-    border-style: solid;
-    font-weight: 800;
-    height: 3em;
-    margin-top: .5em;
-    width: 17em;
-}
-
-select {
-    font-size: 15px;
-    height: 1.5em;
-    width: 120px;
-}
-
-textarea {
-    font-size: 18px;
+    background-color: #328885;
+    color: white;
+    font-size: 16pt;
+    height: 2em;
+    margin-top: 1em;
+    width: 13em;
 }
