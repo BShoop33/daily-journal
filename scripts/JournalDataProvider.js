@@ -47,20 +47,20 @@ eventHub.addEventListener("entryStateChanged", event => {
 
 /* Function that edits the message in the database. Then calls for the getChat function. Then the dispatchStateChangeEventChat.
 */
-export const editEntry = (dateEntry, conceptEntry, journalEntry, moodEntry, id) => {
-    return fetch(`http://localhost:8088/entries/${id}`, {
-        method: 'PATCH',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            dateEntry: dateEntry,
-            conceptEntry: conceptEntry,
-            journalEntry: journalEntry,
-            moodEntry: moodEntry,
-            id: id
-        })
-    })
-        .then(getEntry)
-        .then(dispatchStateChangeEvent)
-};
+// export const editEntry = (dateEntry, conceptEntry, journalEntry, moodEntry, id) => {
+//     return fetch(`http://localhost:8088/entries/${id}`, {
+//         method: 'PATCH',
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             dateEntry: dateEntry,
+//             conceptEntry: conceptEntry,
+//             journalEntry: journalEntry,
+//             moodEntry: moodEntry,
+//             id: id
+//         })
+//     })
+//         .then(getEntry)
+//         .then(dispatchStateChangeEvent)
+// };

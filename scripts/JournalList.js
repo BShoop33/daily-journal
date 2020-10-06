@@ -1,4 +1,4 @@
-import { getEntry, useEntry, deleteEntry, editEntry } from './JournalDataProvider.js'
+import { getEntry, useEntry, deleteEntry } from './JournalDataProvider.js'
 
 const eventHub = document.querySelector("#container")
 
@@ -26,6 +26,7 @@ const render = () => {
             <p id="newMood"><strong>Mood</strong>:  ${entryObj.moodEntry}</p>
             <button onClick="location.reload(true)" class="deleteEntry" id="deleteEntry--${entryObj.id}">Delete Entry</button>
             <button class="editEntry" id="editEntry--${entryObj.id}">Edit Entry</button>
+            <div id="editContainer"></div>
             </section>
         `
     }).join("")
@@ -47,37 +48,47 @@ eventHub.addEventListener("click", event => {
 
 
 
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "editEntry") {
+        entryList()
+    }
+})
 
+let contentTarget1;
 
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("editEntry")) {
+        const [prefix, id] = event.target.id.split("--")
+        let x = useEntry().find(entry => {
+            return parseInt(entry.id) === parseInt(id)
+        })
+        contentTarget1 = document.querySelector(`#editContainer`)
+        editForm(x)
+    }
+})
 
-// eventHub.addEventListener("click", event => {
-//     if (event.target.id === "editEntry") {
-//         entryList()
-//     }
-// })
-
-// let contentTarget1;
-
-// eventHub.addEventListener("click", event => {
-//     if (event.target.id.startsWith("editEntry")) {
-//         const [prefix, id] = event.target.id.split("--")
-//         let x = useEntry().find(entry => {
-//             return parseInt(entry.id) === parseInt(id)
-//         })
-//         contentTarget1 = document.querySelector(`#editEntry--${id}`)
-//         editForm(x)
-//     }
-// })
-
-// /* Function that takes an object and displays the object it editable fields in the HTML at a target location */
-// const editForm = (entryObj) => {
-//     contentTarget1.innerHTML = `
-//     <div id="newDate"><h2>${entryObj.dateEntry}</h2></div>
-//     <div id="newConcepts"><p><strong>Concepts Covered</strong>:  ${entryObj.conceptEntry}</p></div>
-//     <div id="newEntry"><p><strong>Journal Entry</strong>:  ${entryObj.journalEntry}</p></div>
-//     <div id="newMood"><p><strong>Mood</strong>:  ${entryObj.moodEntry}</p></div> 
-//     `
-// }
+/* Function that takes an object and displays the object it editable fields in the HTML at a target location */
+const editForm = (entryObj) => {
+    contentTarget1.innerHTML = `
+    <section id="journalForm">
+        <label id="dateHeader" for="journalDate">Entry Date</label>
+            <input type="date" id="journalDate">
+        <label id="conceptsHeader" for="conceptsCovered">Concepts Covered</label>
+            <input type="text" name="concepts" id="conceptsCovered" placeholder="What concepts did you cover today?">
+        <label id="entryHeader" for="journalEntry">Journal Entry</label>
+            <textarea rows="11" cols="64" name="entries" id="journalEntry" placeholder="Discuss what you learned about those concepts here"></textarea>
+        <label id="moodHeader" for="todaysMood">Today's Mood</label>
+            <select id="mood" style="width: 13em">
+                <option selected="selected" class="service-small">How do you feel today?</option>
+                <option value="Happy">Happy</option>
+                <option value="Ok">Ok</option>
+                <option value="Sad">Sad</option>
+            </select>
+        <button id="saveEdit">Save Edit</button>
+        <button id="cancelEdit">Cancel Edit</button>
+    </section>
+    `
+}
 
 
 // return `
