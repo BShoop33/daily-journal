@@ -15,39 +15,25 @@
       "id": 34
     },
     {
-      "dateEntry": "",
-      "conceptEntry": "",
-      "journalEntry": "",
-      "moodEntry": "How do you feel today?",
+      "dateEntry": "2020-10-07",
+      "conceptEntry": "werq",
+      "journalEntry": "qwerq",
+      "moodEntry": "Happy",
       "id": 35
     },
     {
-      "dateEntry": "",
-      "conceptEntry": "",
-      "journalEntry": "",
-      "moodEntry": "How do you feel today?",
+      "dateEntry": "2020-10-08",
+      "conceptEntry": "asdf",
+      "journalEntry": "asdfa",
+      "moodEntry": "Ok",
       "id": 36
     },
     {
-      "dateEntry": "",
-      "conceptEntry": "",
-      "journalEntry": "",
-      "moodEntry": "How do you feel today?",
+      "dateEntry": "2020-10-08",
+      "conceptEntry": "ad",
+      "journalEntry": "asd",
+      "moodEntry": "Happy",
       "id": 37
-    },
-    {
-      "dateEntry": "",
-      "conceptEntry": "",
-      "journalEntry": "",
-      "moodEntry": "How do you feel today?",
-      "id": 38
-    },
-    {
-      "dateEntry": "",
-      "conceptEntry": "",
-      "journalEntry": "",
-      "moodEntry": "How do you feel today?",
-      "id": 39
     }
   ]
 }

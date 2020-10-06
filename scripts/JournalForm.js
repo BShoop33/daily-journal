@@ -32,8 +32,7 @@ export const journalEntryForm = () => {
         .then(() => {
             journalForm(useEntry())
         })
-        .then(() => {
-        })
+
 }
 
 /* listens for the record button to be clicked and then, when it is clicked, sends the values in the journal inputs to the API via a POST operation */
@@ -52,3 +51,14 @@ eventHub.addEventListener("click", clickEvent => {
         saveEntry(newJournalEntry)
     }
 })
+
+// const updates = {
+//     date: journalDate.value,
+//     concepts: conceptsCovered.value,
+//     entry: journalEntry.value,
+//     mood: mood.value
+// }
+
+// updateUpdates(updates).then(() => {
+//     contentTarget.innerHtml = null
+// })
